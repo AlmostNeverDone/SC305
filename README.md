@@ -1,6 +1,6 @@
-# Microsoft Entra Privileged Identity Management: <br/>Just-in-Time Role Activation and Access Governance
+# Microsoft Entra ID Privileged Access Governance: <br/>PIM, Just-in-Time Access, and Access Reviews
 
-Microsoft Entra 特權身分管理：即時角色啟用與存取治理
+Microsoft Entra ID 特權存取治理：PIM、即時存取與存取審查
 
 <br/>
 
@@ -8,17 +8,17 @@ Microsoft Entra 特權身分管理：即時角色啟用與存取治理
 
 <h2>Outline｜專題簡介</h2>
 
-This project demonstrates identity authentication and access control management in Microsoft Entra ID, including multifactor authentication (MFA), MFA account lockout, and Conditional Access policy configuration.
+This project demonstrates privileged access governance in Microsoft Entra ID using Privileged Identity Management (PIM), Just-in-Time (JIT) role activation, privileged access validation, auditing, and access reviews.
 
-本專題展示 Microsoft Entra ID 中的身分驗證與存取控制管理，包括多重要素驗證 (MFA)、MFA 帳號鎖定，以及條件式存取政策設定。
+本專題透過 Microsoft Entra ID Privileged Identity Management (PIM)、Just-in-Time (JIT) 角色啟用、特權存取驗證、稽核與存取審查，實作特權存取治理。
 
-It explores how MFA provides an additional layer of authentication beyond passwords, while Conditional Access enables administrators to apply targeted access controls based on users and cloud resources.
+It explores how privileged roles can be assigned as eligible rather than permanently active, allowing administrative permissions to remain inactive until explicitly required. Role activation requirements such as MFA, justification, and limited activation duration provide additional controls before elevated access becomes available.
 
-內容進一步探討 MFA 如何在密碼之外提供額外的身分驗證層級，以及 Conditional Access 如何讓管理員依據使用者與雲端資源套用特定的存取控制。
+內容進一步探討如何將特權角色設定為 Eligible，而非持續維持 Active 狀態，使管理權限僅在實際需要時才進行啟用。透過 MFA、啟用理由與限時存取等要求，可在取得提升權限前建立額外控制。
 
-The Conditional Access What If tool is also used to evaluate policy behaviour across different application access scenarios, demonstrating how access policies can be validated before or during deployment.
+Privileged access was validated before and after activation to confirm the separation between role eligibility and active administrative permissions. Audit records and access reviews were also used to examine privileged activities and evaluate whether elevated role assignments remained appropriate over time.
 
-此外，透過 Conditional Access What If 工具評估不同應用程式存取情境下的政策行為，以展示如何在政策部署前或部署期間驗證存取控制結果。
+此外，透過比較角色啟用前後的存取結果，驗證角色資格與實際管理權限之間的差異；並利用稽核紀錄與存取審查檢查特權活動，以及評估提升權限的角色指派是否仍具持續保留的必要性。
 
 <br/>
 
@@ -26,36 +26,40 @@ The Conditional Access What If tool is also used to evaluate policy behaviour ac
 
 <h2>Key Learning Outcomes｜主要學習成果</h2>
 
-* Enable multifactor authentication (MFA) for a selected user<br/>
-為指定使用者啟用多重要素驗證 (MFA)
+* Configure Microsoft Entra Privileged Identity Management (PIM) role settings<br/>
+設定 Microsoft Entra Privileged Identity Management (PIM) 角色政策
 
-* Review MFA service settings and available authentication controls<br/>
-檢視 MFA 服務設定與可用的身分驗證控制
+* Assign privileged roles using eligible rather than permanently active access<br/>
+以 Eligible 而非永久 Active 的方式指派特權角色
 
-* Configure MFA account lockout settings<br/>
-設定 MFA 帳號鎖定機制
+* Configure time-bound privileged role assignments<br/>
+設定限時特權角色指派
 
-* Create and configure a Conditional Access policy<br/>
-建立並設定 Conditional Access 政策
+* Apply activation requirements including MFA, justification, and activation duration<br/>
+套用 MFA、啟用理由與啟用時間等角色啟用要求
 
-* Configure user inclusion and administrative exclusions<br/>
-設定使用者納入範圍與管理員排除條件
+* Activate privileged roles using Just-in-Time (JIT) access<br/>
+使用 Just-in-Time (JIT) 存取啟用特權角色
 
-* Restrict access to a selected cloud application<br/>
-限制指定雲端應用程式的存取
+* Validate access boundaries before and after privileged role activation<br/>
+驗證特權角色啟用前後的存取邊界
 
-* Apply block access controls through Conditional Access<br/>
-透過 Conditional Access 套用封鎖存取控制
+* Deactivate privileged access after completing administrative tasks<br/>
+完成管理作業後停用特權存取
 
-* Validate Conditional Access policies using the What If tool<br/>
-使用 What If 工具驗證 Conditional Access 政策
+* Review privileged role assignment and activation activities through audit records<br/>
+透過稽核紀錄檢查特權角色指派與啟用活動
 
-* Compare policy outcomes across different application access scenarios<br/>
-比較不同應用程式存取情境下的政策結果
+* Conduct access reviews to evaluate continued privileged access requirements<br/>
+執行存取審查，以評估持續保留特權存取的必要性
+
+* Understand how PIM supports least privilege and privileged access governance<br/>
+理解 PIM 如何支援最小權限與特權存取治理
 
 <br/>
 
 ---------
+
 
 <h2>Tools and Concepts Covered｜涵蓋工具與概念</h2>
 
@@ -63,19 +67,24 @@ The Conditional Access What If tool is also used to evaluate policy behaviour ac
 | ------------------------------------------------ | ------------------------------ |
 | Cloud Identity Management <br/>雲端身分管理          | Microsoft Entra ID |
 | Identity Administration <br/>身分管理                | Microsoft Entra Admin Center |
-| Multifactor Authentication <br/>多重要素驗證          | Microsoft Entra MFA |
-| User-Based MFA <br/>使用者式 MFA                    | Per-user MFA |
-| MFA Configuration <br/>MFA 設定                    | MFA Service Settings |
-| Account Protection <br/>帳號保護                    | MFA Account Lockout |
-| Access Control <br/>存取控制                        | Conditional Access |
-| Policy Assignments <br/>政策指派                    | Users and Groups |
-| Administrative Exclusions <br/>管理員排除            | Excluded Users |
-| Cloud Resource Control <br/>雲端資源控制             | Target Resources |
-| Access Controls <br/>存取控制措施                    | Block Access |
-| Policy Evaluation <br/>政策評估                     | Conditional Access What If |
-| Application-Based Access <br/>應用程式存取控制         | Office 365 |
-| Policy Validation <br/>政策驗證                     | Applied and Not Applied Policies |
+| Premium Identity Features <br/>進階身分安全功能       | Microsoft Entra ID P2 (Trial) |
+| Privileged Access Management <br/>特權存取管理        | Privileged Identity Management (PIM) |
+| Privileged Role Management <br/>特權角色管理          | Microsoft Entra Roles |
+| Privileged Role Assignment <br/>特權角色指派          | Eligible Assignment |
+| Administrative Roles <br/>管理角色                   | User Administrator |
+| Just-in-Time Access <br/>即時存取                    | Role Activation |
+| Time-Bound Access <br/>限時存取                     | Activation Duration, Assignment Expiration |
+| Strong Authentication <br/>強式身分驗證              | MFA on Activation |
+| Privileged Access Controls <br/>特權存取控制          | Activation Justification |
+| Least Privilege <br/>最小權限                       | Eligible vs Active Access |
+| Access Validation <br/>存取驗證                     | Before and After Activation Testing |
+| Privileged Access Monitoring <br/>特權存取監控        | PIM Audit History |
+| Access Governance <br/>存取治理                     | Access Reviews |
+| Access Recertification <br/>存取再認證               | Review Decisions and Remediation |
 
+<br/>
+
+---------
 
 <br/>
 
@@ -92,9 +101,12 @@ The Conditional Access What If tool is also used to evaluate policy behaviour ac
 
 [Tasks]
 
-* Configure MFA Account Lockout (設定 MFA 帳號鎖定)
-* Configure Conditional Access (設定 Conditional Access)
-* Validate Conditional Access with What If (使用 What If 驗證 Conditional Access)
+* Configure Privileged Role Settings (設定特權角色政策)
+* Assign an Eligible Privileged Role (指派可啟用的特權角色)
+* Activate Just-in-Time Privileged Access (啟用即時特權存取)
+* Validate Privileged Access Boundaries (驗證特權存取邊界)
+* Review Privileged Access Activity (檢查特權存取活動)
+* Perform a Privileged Access Review (執行特權存取審查)
 <br/>
 
 ---------
@@ -134,18 +146,17 @@ The Conditional Access What If tool is also used to evaluate policy behaviour ac
 
 <h2>Results｜專題結論</h2>
 
-This project demonstrated identity authentication protection and access control management in Microsoft Entra ID through MFA account lockout and Conditional Access policies. MFA account lockout was configured to limit repeated denied authentication attempts and provide additional protection against abusive MFA requests.
+This project demonstrated privileged access governance in Microsoft Entra ID using Privileged Identity Management (PIM). A privileged role was configured as an eligible assignment rather than permanent active access, allowing administrative privileges to remain inactive until explicitly required.
 
-本專題透過 MFA 帳號鎖定與 Conditional Access 政策，實作 Microsoft Entra ID 中的身分驗證防護與存取控制管理。MFA 帳號鎖定可限制重複遭拒的驗證嘗試，並為異常或濫用的 MFA 請求提供額外防護。
+本專題透過 Microsoft Entra ID Privileged Identity Management (PIM) 實作特權存取治理。特權角色以 Eligible 方式指派，而非永久維持 Active 狀態，使管理權限在實際需要前保持未啟用狀態。
 
-Conditional Access was configured with specific user assignments, administrative exclusions, target resources, and block access controls. This demonstrated how access policies can be scoped to selected identities and cloud resources rather than being applied universally across the tenant.
+The privileged role was activated through a controlled Just-in-Time (JIT) process with defined activation requirements, and access was validated before and after activation to confirm that elevated permissions were only available during the authorised period. Privileged activity was subsequently reviewed through audit records to provide visibility into role assignment and activation events.
 
-Conditional Access 則透過指定使用者、管理員排除、目標資源及封鎖存取控制進行設定，展示存取政策如何針對特定身分與雲端資源套用，而非一律套用至整個租戶環境。
+透過具備明確啟用條件的 Just-in-Time (JIT) 流程啟用特權角色，並比較角色啟用前後的存取結果，以確認提升權限僅在授權期間內可用。隨後透過稽核紀錄檢查特權角色指派與啟用活動，提升特權存取事件的可視性。
 
-The Conditional Access What If tool was used to compare policy outcomes across different target resources. The analysis demonstrated how the same user can receive different policy evaluation results depending on whether the requested application matches the configured policy scope.
+An access review was also conducted to evaluate whether the privileged assignment remained appropriate, extending the project from temporary privilege activation into periodic access recertification and governance.
 
-最後使用 Conditional Access What If 工具比較不同目標資源下的政策結果，確認相同使用者會依據所存取的應用程式是否符合政策範圍，而產生不同的政策評估結果。
-
+最後執行存取審查，以評估特權角色指派是否仍具必要性，將專題從暫時性權限啟用進一步延伸至定期權限再認證與存取治理。
 
 <br />
 <br />
@@ -157,22 +168,21 @@ The Conditional Access What If tool was used to compare policy outcomes across d
 <h2>Security Insight｜安全洞察</h2>
 
 
-Identity protection is more effective when authentication controls and access policies are applied in layers. MFA account lockout can help limit repeated denied authentication requests, while Conditional Access provides more granular control over who can access specific resources and under what conditions.
+Privileged access presents significantly higher risk than standard user access because compromised or misused administrative permissions can affect large portions of an identity environment. Replacing standing administrative access with eligible, time-bound activation reduces the duration in which privileged permissions are available and therefore helps limit the attack surface.
 
-身分安全在採用多層次控制時能發揮更完整的效果。MFA 帳號鎖定可限制重複遭拒的驗證請求，而 Conditional Access 則能進一步控制哪些使用者可存取特定資源，以及存取行為需要符合哪些條件。
+特權存取的風險明顯高於一般使用者權限，因為遭入侵或遭濫用的管理權限可能影響大範圍的身分環境。以 Eligible 與限時啟用取代持續存在的管理權限，可縮短特權權限實際可用的時間，進而降低攻擊面。
 
-Conditional Access policies should be scoped carefully. Including only the required users and resources helps reduce unnecessary access disruption, while excluding appropriate administrative or emergency-access accounts can reduce the risk of accidentally locking administrators out of the environment.
+Just-in-Time activation also separates role eligibility from active privilege. A user may be authorised to request a privileged role without continuously holding that privilege, while activation requirements such as MFA, justification, and limited duration introduce additional controls before elevated access becomes available.
 
-Conditional Access 政策應謹慎設定適用範圍。僅納入必要的使用者與資源，可降低非預期的存取中斷；適當排除管理帳號或緊急存取帳號，則有助於避免政策設定錯誤造成管理人員無法進入環境。
+Just-in-Time 啟用亦將「具備角色資格」與「實際持有特權」分離。使用者可以具備申請特權角色的資格，而不需持續擁有該權限；MFA、啟用理由與時間限制等要求，則在取得提升權限前增加額外控制。
 
-Policy configuration alone does not confirm that access controls will behave as intended. The What If tool provides a practical way to evaluate Conditional Access decisions by comparing applicable and non-applicable scenarios before relying on the policy in normal operations.
+Privileged access should remain both temporary and auditable. Reviewing assignment, activation, and deactivation events provides evidence of how elevated permissions were used, while access reviews help determine whether users should continue to retain privileged eligibility over time.
 
-僅完成政策設定並不能證明存取控制一定會依照預期運作。透過 What If 工具比較政策適用與不適用的情境，可在實際依賴政策進行存取控制前，更清楚地驗證 Conditional Access 的判斷結果。
+特權存取除了應具備暫時性，也必須維持可稽核性。檢查角色指派、啟用與停用事件，可留下提升權限使用方式的證據；存取審查則有助於定期判斷使用者是否仍應保有特權角色資格。
 
-The MFA account lockout values and Conditional Access scenarios used in this project were based on the lab environment and should not be treated as universal production settings. In a real organisation, authentication thresholds, policy exclusions, target resources, and enforcement modes should be adjusted according to risk, operational requirements, and potential business impact.
+This project also highlights that least privilege is not limited to assigning fewer permissions. Effective privileged access governance requires controlling when elevated access is available, how it is activated, how long it remains active, and whether the underlying entitlement continues to be justified.
 
-本專題使用的 MFA 帳號鎖定參數與 Conditional Access 情境依據實驗環境設定，不應視為所有正式環境皆適用的標準值。在實際組織中，驗證閾值、政策排除條件、目標資源及強制執行模式，仍應依據風險、營運需求與可能造成的業務影響進行調整。
-
+本專題亦顯示，最小權限並不只是單純減少授予的權限。有效的特權存取治理還必須控制提升權限何時可用、如何啟用、可維持多久，以及其原始角色資格是否仍具合理性。
 
 <br />
 <br />
