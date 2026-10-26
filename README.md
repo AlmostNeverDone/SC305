@@ -114,33 +114,54 @@ Privileged access was validated before and after activation to confirm the separ
 <h2>Practice｜實踐</h2> <p align="center">
 
 <p align="center">
-<b>Task 1: Configure MFA Account Lockout<br/> (設定 MFA 帳號鎖定)</b><br/>
+<b>Task 1: Configure Privileged Role Settings<br/> (設定特權角色政策)</b><br/>
 <img src="https://i.imgur.com/WdPIUHO.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-<b>Task 2-1: Configure User Assignment and Exclusion<br/> (設定使用者指派與排除)</b><br/>
+<b>Task 2: Assign an Eligible Privileged Role<br/> (指派可啟用的特權角色)</b><br/>
 <img src="https://i.imgur.com/CTmcBxT.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-<b>Task 2-2: Configure the Target Resource<br/> (設定目標資源)</b><br/>
-<img src="https://i.imgur.com/1F6Q4qY.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-<b>Task 2-3: Configure Block Access<br/> (設定封鎖存取)</b><br/>
-<img src="https://i.imgur.com/P0uvv2U.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-<b>Task 3-1: Validate the Block Policy with What If<br/> (使用 What If 驗證封鎖政策)</b><br/>
+Task 3-1: Verify Access Before Activation<br/> (驗證啟用前的存取權限)</b><br/>
 <img src="https://i.imgur.com/2W8NL6B.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 * Used the Conditional Access What If tool to verify that the Office 365 block policy applies to the selected test user. <br/>The policy remained in Report-only mode without enforcing the access restriction.<br/>
 透過 Conditional Access What If 工具驗證 Office 365 封鎖政策適用於指定測試使用者；<br/>政策維持 Report-only 模式，並未實際強制執行存取限制<br/>
 <br />
 <br />
-<b>Task 3-2: Compare Conditional Access Results<br/> (比較 Conditional Access 政策結果)</b><br/>
+<b>Task 3-2: Activate the Privileged Role<br/> (啟用特權角色)</b><br/>
 <img src="https://i.imgur.com/viFvKGi.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
+<b>Task 3-3: Verify Active Privileged Access<br/> (驗證已啟用的特權存取)</b><br/>
+<img src="https://i.imgur.com/viFvKGi.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+<b>Task 4: Deactivate Privileged Access<br/> (停用特權存取)</b><br/>
+<img src="https://i.imgur.com/CTmcBxT.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+<b>Task 5: Review Privileged Access Activity<br/> (檢查特權存取活動)</b><br/>
+<img src="https://i.imgur.com/CTmcBxT.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Task 6-1: Create a Privileged Access Review<br/> (建立特權存取審查)</b><br/>
+<img src="https://i.imgur.com/2W8NL6B.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+* Used the Conditional Access What If tool to verify that the Office 365 block policy applies to the selected test user. <br/>The policy remained in Report-only mode without enforcing the access restriction.<br/>
+透過 Conditional Access What If 工具驗證 Office 365 封鎖政策適用於指定測試使用者；<br/>政策維持 Report-only 模式，並未實際強制執行存取限制<br/>
+<br />
+<br />
+<b>Task 6-2: Review the Privileged Assignment<br/> (審查特權角色指派)</b><br/>
+<img src="https://i.imgur.com/viFvKGi.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+<b>Task 6-3: Review the Access Review Result<br/> (檢查存取審查結果)</b><br/>
+<img src="https://i.imgur.com/viFvKGi.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+
+
 
 ---------
 
