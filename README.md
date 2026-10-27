@@ -128,7 +128,7 @@ Privileged access was validated before and after activation to confirm the separ
 將 User Administrator 角色以限時 Eligible Assignment 指派給非管理員測試帳號，<br/>使其可在指定期間內啟用特權，而無須授予永久管理權限<br/>
 <br />
 <br />
-Task 3-1: Verify Access Before Activation<br/> (驗證啟用前的存取權限)</b><br/>
+<b>Task 3-1: Verify Access Before Activation<br/> (驗證啟用前的存取權限)</b><br/>
 <img src="https://i.imgur.com/IxMNtmd.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
@@ -148,7 +148,7 @@ Task 3-1: Verify Access Before Activation<br/> (驗證啟用前的存取權限)<
 <img src="https://i.imgur.com/eSEqtR7.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Task 6-1: Create a Privileged Access Review<br/> (建立特權存取審查)</b><br/>
+<b>Task 6-1: Create a Privileged Access Review<br/> (建立特權存取審查)</b><br/>
 <img src="https://i.imgur.com/ixtxcWY.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 * Created a one-time access review for the User Administrator role, <br/>targeting eligible role assignments to evaluate whether privileged access remains necessary.<br/>
@@ -231,5 +231,4 @@ This project also highlights that least privilege is not limited to assigning fe
 <h2>Reference｜參考</h2>
 
 * [Microsoft] [Microsoft Certified: Identity and Access Administrator Associate (SC-300)](https://learn.microsoft.com/en-us/credentials/certifications/identity-and-access-administrator/?practice-assessment-type=certification)<br/>
-* [Microsoft] [Get started with identity and access labs](https://learn.microsoft.com/en-au/training/modules/get-started-identity-access-labs/)<br/>
 <br/>
