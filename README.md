@@ -115,49 +115,67 @@ Privileged access was validated before and after activation to confirm the separ
 
 <p align="center">
 <b>Task 1: Configure Privileged Role Settings<br/> (設定特權角色政策)</b><br/>
-<img src="https://i.imgur.com/WdPIUHO.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/cKizjxV.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+* Configured the User Administrator role to require MFA and business justification during activation, <br/>with a maximum activation duration of one hour.<br/>
+設定 User Administrator 角色，要求啟用時完成 MFA 與業務理由說明，<br/>並將特權啟用時間上限限制為一小時<br/>
 <br />
 <br />
 <b>Task 2: Assign an Eligible Privileged Role<br/> (指派可啟用的特權角色)</b><br/>
-<img src="https://i.imgur.com/CTmcBxT.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/ibt24XG.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+* Assigned the User Administrator role as a time-bound eligible assignment to a non-administrator test account, <br/>allowing temporary privilege activation without granting permanent administrative access.<br/>
+將 User Administrator 角色以限時 Eligible Assignment 指派給非管理員測試帳號，<br/>使其可在指定期間內啟用特權，而無須授予永久管理權限<br/>
 <br />
 <br />
 Task 3-1: Verify Access Before Activation<br/> (驗證啟用前的存取權限)</b><br/>
-<img src="https://i.imgur.com/2W8NL6B.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-* Used the Conditional Access What If tool to verify that the Office 365 block policy applies to the selected test user. <br/>The policy remained in Report-only mode without enforcing the access restriction.<br/>
-透過 Conditional Access What If 工具驗證 Office 365 封鎖政策適用於指定測試使用者；<br/>政策維持 Report-only 模式，並未實際強制執行存取限制<br/>
+<img src="https://i.imgur.com/IxMNtmd.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 <b>Task 3-2: Activate the Privileged Role<br/> (啟用特權角色)</b><br/>
-<img src="https://i.imgur.com/viFvKGi.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/jyIOXk6.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 <b>Task 3-3: Verify Active Privileged Access<br/> (驗證已啟用的特權存取)</b><br/>
-<img src="https://i.imgur.com/viFvKGi.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/sP9qEm6.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 <b>Task 4: Deactivate Privileged Access<br/> (停用特權存取)</b><br/>
-<img src="https://i.imgur.com/CTmcBxT.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/etwQJyB.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 <b>Task 5: Review Privileged Access Activity<br/> (檢查特權存取活動)</b><br/>
-<img src="https://i.imgur.com/CTmcBxT.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/eSEqtR7.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Task 6-1: Create a Privileged Access Review<br/> (建立特權存取審查)</b><br/>
-<img src="https://i.imgur.com/2W8NL6B.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/ixtxcWY.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-* Used the Conditional Access What If tool to verify that the Office 365 block policy applies to the selected test user. <br/>The policy remained in Report-only mode without enforcing the access restriction.<br/>
-透過 Conditional Access What If 工具驗證 Office 365 封鎖政策適用於指定測試使用者；<br/>政策維持 Report-only 模式，並未實際強制執行存取限制<br/>
+* Created a one-time access review for the User Administrator role, <br/>targeting eligible role assignments to evaluate whether privileged access remains necessary.<br/>
+建立針對 User Administrator 角色的一次性存取審查，<br/>檢查 Eligible 角色指派是否仍有保留特權存取的必要<br/>
+<br />
+* Configured a designated reviewer and disabled automatic enforcement <br/>to maintain control over access review decisions.<br/>
+指定審查人員並停用自動執行機制，以保留對存取審查決策的管理控制<br/>
 <br />
 <br />
 <b>Task 6-2: Review the Privileged Assignment<br/> (審查特權角色指派)</b><br/>
-<img src="https://i.imgur.com/viFvKGi.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/nXp5Obu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+* Reviewed the User Administrator eligible assignment for the <br/>test user and recorded an access decision with a documented justification.<br/>
+審查測試使用者的 User Administrator Eligible 角色指派，<br/>並記錄存取審查決策與對應理由<br/>
+<br />
+* Access reviews help organisations periodically verify whether privileged assignments <br/>remain appropriate, supporting least-privilege access governance.<br/>
+存取審查可協助組織定期確認特權角色指派是否仍然適當，<br/>以支援最小權限存取治理<br/>
 <br />
 <br />
 <b>Task 6-3: Review the Access Review Result<br/> (檢查存取審查結果)</b><br/>
-<img src="https://i.imgur.com/viFvKGi.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/OXefyGB.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+* Completed the privileged access review and examined the <br/>recorded decisions, reviewer information, and final review status.<br/>
+完成特權存取審查，並檢查已記錄的審查決策、審查人員資訊及最終審查狀態<br/>
+<br />
+* Access review results provide evidence of periodic privilege recertification <br/>and support accountability, compliance, and audit readiness.<br/>
+存取審查結果可作為定期特權重新認證的證據，支援責任追蹤、合規管理與稽核準備<br/>
 <br />
 <br />
 
